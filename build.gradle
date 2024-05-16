@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.5'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.exercise'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '3.2.5'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+	implementation group: 'com.graphql-java', name: 'voyager-spring-boot-starter', version: '5.0.2'
+	implementation("com.tailrocks.graphql:graphql-datetime-spring-boot-starter:6.0.0")
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '3.2.5'
+	implementation 'io.projectreactor:reactor-core'
+	implementation 'org.springframework:spring-websocket'
+	implementation group: 'org.springframework', name: 'spring-messaging', version: '6.1.6'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
